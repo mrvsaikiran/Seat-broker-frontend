@@ -1,0 +1,33 @@
+.card {
+    margin: 1rem;
+    transition: transform 0.3s;
+   }
+   
+   .card:hover {
+    transform: scale(1.05);
+   }
+   
+   .card-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+   }
+   
+   .card-text {
+    font-size: 1rem;
+   }
+   
+   .btn {
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
+   }
+   .button-container {
+    display: flex;
+    flex-wrap: wrap; /* Allows buttons to wrap to the next line if needed */
+    gap: 0.5rem; /* Adds some space between buttons */
+   }
+   
+   .btn:hover {
+    border: 2px solid #0000ff; /* Change the border color on hover */
+    border-radius: 20px; /* Rounds the corners of the border on hover */
+   }
+   

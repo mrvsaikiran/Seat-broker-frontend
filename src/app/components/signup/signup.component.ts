@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { signupDataValidater } from '../../helpers/SignupDataValidater';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-signup',
@@ -59,6 +60,21 @@ export class SignupComponent {
     
     return null
    }
+
+   isEmailAddressAvailabe(control:FormControl): Promise<any>  | Observable<any> | null {
+ const response=new Promise((reslove,reject)=>{
+  // https call to backend to check whether email is avaible or not
+ })
+ return null;
+   }
+
+  //  isEmailAddressAvailabe(control:FormControl): Promise<any>  | Observable<any> {
+  //   const response=new Promise((reslove,reject)=>{
+  //    // https call to backend to check whether email is avaible or not
+  //    if ()
+  //   })
+  //     }
+
    toggeleVisbility(){
       this.isText=!this.isText;
       this.isText ? this.eyeIconClass='fa-eye': this.eyeIconClass='fa-eye-slash';

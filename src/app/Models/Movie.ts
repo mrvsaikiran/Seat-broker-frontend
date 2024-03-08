@@ -1,10 +1,11 @@
 export interface Movie {
-    id: number; // Unique identifier for the movie
+    id: number; 
     title: string;
-    genre: string; // Array of genres
-    releaseDate: Date;
-    imageUrl: string; // URL of the movie poster image
+    genre: string;
+    // releaseDate: Date;
+    imageUrl: string; 
     language: string;
-    duration: number 
+    duration: number ;
+    rating : number;
     
   }

@@ -1,0 +1,13 @@
+<nav class="calendar-navbar">
+    <button class="nav-button fa-solid fa-angles-left" (click)="previousWeek()" [disabled]="isPreviousDisabled"></button>
+    <ul>
+      <li *ngFor="let date of upcomingDates; let i = index"
+          [ngClass]="{ 'active': i === selectedIndex, 'current-date': today.getDate() === date.date.getDate() }">
+        <a (click)="selectDate(i)">{{ date.date.getDate() }}<br>
+          <span class="day-name">{{ date.date.toLocaleDateString('en-US', { weekday: 'short' }) }}</span>
+        </a>
+      </li>
+    </ul>
+    <button class="nav-button fa-solid fa-angles-right" (click)="nextWeek()"></button>
+  </nav>
+  

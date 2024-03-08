@@ -1,0 +1,66 @@
+.calendar-navbar {
+    display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  background-color: #f0f0f0;
+  border-radius: 4px;
+  font-weight: bold;
+  }
+  
+  .calendar-navbar li {
+    padding: 10px 15px;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+    display: inline-block;
+    border: 2px solid #514e4e49;
+  }
+  
+  .calendar-navbar li a {
+    color: #333;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .calendar-navbar li.active,
+  .calendar-navbar li:hover {
+    background-color: #e0e0e0;
+  }
+  
+  .nav-button {
+    background: none;
+    border: none;
+    padding: 0 10px;
+    cursor: pointer;
+  }
+  
+  .current-date {
+    font-weight: bolder;
+    background-color: #0c9fe377;
+    
+ }
+
+.day-name {
+  font-size: 0.8em;
+  color: #08080892;
+}
+.button:hover .button-box,
+.button:focus .button-box {
+  transition: 0.4s;
+  transform: translateX(-65px);
+  background-color: #e0e0e0;
+
+}
+
+  
+  @media only screen and (max-width: 768px) {
+    .calendar-navbar {
+      flex-wrap: wrap;
+    }
+  
+    .calendar-navbar li {
+      width: 33.33%;
+    }
+  }
+  

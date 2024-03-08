@@ -1,0 +1,20 @@
+<app-calendar-navbar></app-calendar-navbar>
+<!-- <div class="cards-container">
+    <div class="card" *ngFor="let cardNumber of generateCardData()">
+      <p>{{ cardNumber }}</p>
+    </div>
+  </div>
+   -->
+
+   <div class="card" style="width: 18rem;">
+    <div class="card-body">
+       <h5 class="card-title">{{ theatreName }}</h5>
+       <p class="card-text"><span class="badge bg-primary">{{ rating }}</span></p>
+       <div *ngFor="let date of dates">
+         <button [disabled]="isDisabled(date)" class="btn btn-primary">{{ date |date:'shortTime' }}</button>
+       </div>
+    </div>
+   </div>
+   
+  <p-paginator [rows]="cardsPerPage" [totalRecords]="totalCards" (onPageChange)="onPageChange($event)"></p-paginator>
+  
