@@ -49,7 +49,7 @@ export class LoginComponent {
         this.username=this.loginForm.value.Username;
         this.password=this.loginForm.value.Password;
         this.LoginData=new loginModel(this.username,this.password);
-        console.log(this.loginForm);
+        
         //http call to save the data 
       }
       else{

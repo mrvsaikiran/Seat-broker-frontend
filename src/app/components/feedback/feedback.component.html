@@ -3,8 +3,39 @@
     <div class="row">
         <div class=" col-lg-5 col-md-7 offset-lg-4 offset-md-3">
             <div class=" panel border bg-white">
-                <p-rating [(ngModel)]="value" [cancel]="false"></p-rating>     
-                   
+              
+             <br><br>
+             
+              <div  class="text-center">
+                <h5 class="font-weight-bold ">How is Movie</h5>
+                <p-rating class="text-center mx-auto  " [(ngModel)]="MovieRating" [cancel]="false"></p-rating>     
+                <span class="font-weight-bold text-center" >    {{MovieRating}}</span>  
+              </div> 
+              <br><br>
+
+              <div  class="text-center">
+                <h5 class="font-weight-bold ">How is Theatre infastructure </h5>
+                <p-rating class="text-center mx-auto  " [(ngModel)]="TheatreInfastructureRating" [cancel]="false"></p-rating>     
+                <span class="font-weight-bold text-center" >    {{TheatreInfastructureRating}}</span>  
+              </div> 
+             <br>
+              <div  class="text-center">
+                <h5 class="font-weight-bold ">How is theatre Experience</h5>
+                <p-rating class="text-center mx-auto  " [(ngModel)]="TheatreExperienceRating" [cancel]="false"></p-rating>     
+                <span class="font-weight-bold text-center" >    {{TheatreExperienceRating}}</span>  
+              </div> 
+              <div  class="text-centre font-weight-bold">
+                <h5 class="font-weight-bold ">How is theatre Experience</h5>
+                <textarea [(ngModel)]="userFeedback" placeholder="feedback you want to add" class="form-control input-textarea"></textarea>
+              </div> 
+              <br> 
+            <div class="text-center">
+            <button class="btn" (click)="onSubmit()">
+              <span class="btn-text-one">Please provide feedback</span>
+    <span class="btn-text-two">submit</span> 
+            </button>
+            </div>
+              
     </div>
     </div>
     </div>

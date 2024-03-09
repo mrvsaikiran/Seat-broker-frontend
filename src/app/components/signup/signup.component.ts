@@ -5,6 +5,8 @@ import { RouterModule } from '@angular/router';
 import { signupDataValidater } from '../../helpers/SignupDataValidater';
 import { Observable } from 'rxjs';
 import {validateForm} from '../../helpers/validateForm'
+import { signupModel } from '../../Models/signup';
+
 
 @Component({
   selector: 'app-signup',
@@ -86,6 +88,11 @@ export class SignupComponent {
   }
    onSubmit(){
     if(this.SignUpForm.valid){
+      const username=this.SignUpForm.value.Username;
+      const password=this.SignUpForm.value.Password;
+      const EmailID=this.SignUpForm.value.Email;
+      const PhoneNumber=this.SignUpForm.value.PhoneNumber;
+        const SignUpData=new signupModel(username,password,EmailID,PhoneNumber);
       // submit data to backend
     }
     else{
