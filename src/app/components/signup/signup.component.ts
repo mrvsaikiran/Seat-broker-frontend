@@ -4,6 +4,7 @@ import { FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators } 
 import { RouterModule } from '@angular/router';
 import { signupDataValidater } from '../../helpers/SignupDataValidater';
 import { Observable } from 'rxjs';
+import {validateForm} from '../../helpers/validateForm'
 
 @Component({
   selector: 'app-signup',
@@ -80,9 +81,17 @@ export class SignupComponent {
       this.isText ? this.eyeIconClass='fa-eye': this.eyeIconClass='fa-eye-slash';
       this.isText ? this.type ="text" :this.type ="password";
    }
-
+   isFieldValid(controlName:string):boolean{
+    return this.SignUpForm.controls[controlName].dirty && this.SignUpForm.hasError('required',controlName);
+  }
    onSubmit(){
-    console.log(this.SignUpForm);
+    if(this.SignUpForm.valid){
+      // submit data to backend
+    }
+    else{
+      validateForm.validateAllFormFeilds(this.SignUpForm)
+    }
    }
+   
 
 }

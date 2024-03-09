@@ -40,8 +40,6 @@ export class signupDataValidater{
 
     return emailRegex.test(mailId);
      
-
-     
     }
       
     

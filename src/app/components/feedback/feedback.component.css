@@ -1,0 +1,41 @@
+
+.outer{
+    height: 100vh;
+    background: linear-gradient(to top, #c9c9ff 50%,#6e6ef6 90%) no-repeat;
+}
+.panel{
+    min-height: 380px;
+    box-shadow: 20px 20px 80px rgb(218,218,218);
+    border-radius: 12px;
+    margin-top: 100px;
+    --background: linear-gradient(to left, #f7ba2b 0%, #ea5358 100%);
+    overflow: visible;
+ background: #f7ba2b;
+ background: var(--background);
+ position: relative;
+ z-index: 1;
+}
+.panrl::after{
+    position: absolute;
+ content: "";
+ top: 30px;
+ left: 0;
+ right: 0;
+ z-index: -1;
+ height: 100%;
+ width: 100%;
+ transform: scale(0.8);
+ filter: blur(25px);
+ background: #f7ba2b;
+ background: var(--background);
+ transition: opacity .5s;
+ box-shadow: 20px 20px 80px rgb(11, 10, 10);
+}
+:host ::ng-deep .ui-rating-star.ui-rating-star-hover {
+    color: rgb(2, 2, 2); 
+}
+
+.panel:hover::after
+{
+    opacity: 0;
+}

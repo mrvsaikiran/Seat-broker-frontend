@@ -5,6 +5,8 @@ import { SignupComponent } from './components/signup/signup.component';
 import { HomeComponent } from './components/home/home.component';
 import { MoviesListComponent } from './components/movies-list/movies-list.component';
 import { ShowsListComponent } from './components/shows-list/shows-list.component';
+import { FeedbackComponent } from './components/feedback/feedback.component';
+import { MovieTicketComponent } from './components/movie-ticket/movie-ticket.component';
  
 
 export const routes: Routes = [
@@ -27,6 +29,14 @@ export const routes: Routes = [
     {
         path:'movie',
         component:ShowsListComponent
+    },
+    {
+        path:'ticket',
+        component:MovieTicketComponent
+    },
+    {
+        path:'feedback',
+        component:FeedbackComponent
     },
     {
         path:'',

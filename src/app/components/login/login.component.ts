@@ -3,6 +3,9 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { FormBuilder, FormControl, FormGroup, ReactiveFormsModule ,Validators} from '@angular/forms';
 import {loginModel} from '../../Models/login';
+import {validateForm} from '../../helpers/validateForm'
+
+
 @Component({
   selector: 'app-login',
   standalone: true,
@@ -46,13 +49,15 @@ export class LoginComponent {
         this.username=this.loginForm.value.Username;
         this.password=this.loginForm.value.Password;
         this.LoginData=new loginModel(this.username,this.password);
-        console.log(this.LoginData);
+        console.log(this.loginForm);
         //http call to save the data 
       }
       else{
         this.isErrorFound=true;
-        
+        validateForm.validateAllFormFeilds(this.loginForm)
+        console.log(this.loginForm);
       }
     }
-
+   
+  
 }
