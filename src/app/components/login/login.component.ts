@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import {
   FormBuilder,
   FormControl,
@@ -10,7 +10,7 @@ import {
 } from '@angular/forms';
 import { loginModel } from '../../Models/login';
 import { validateForm } from '../../helpers/validateForm';
-import { AuthService } from '../../Services/auth-service.service';
+import { AuthService } from '../../Services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -33,10 +33,10 @@ export class LoginComponent {
 
   loginForm: FormGroup;
 
-  constructor(private formBuilder: FormBuilder,private auth:AuthService) {
+  constructor(private formBuilder: FormBuilder, private router: Router, private auth: AuthService) {
     this.loginForm = this.formBuilder.group({
       Username: ['', Validators.required],
-      // Password:['',Validators.required]
+
       Password: new FormControl(null, Validators.required),
     });
   }
@@ -62,14 +62,16 @@ export class LoginComponent {
       this.password = this.loginForm.value.Password;
       this.LoginData = new loginModel(this.username, this.password);
 
-      this.auth.login(this.LoginData)
-      .subscribe({
-        next:(res)=>{
-          alert(res.message)
-        },error:(err)=>{
-          alert(err.error.message)
-        }
-      })
+      this.auth.login(this.LoginData).subscribe({
+        next: (res) => {
+          alert(res.message);
+          this.auth.StoreToken(res.token);
+          this.router.navigate(['home']);
+        },
+        error: (err) => {
+          alert(err.error.message);
+        },
+      });
     } else {
       this.isErrorFound = true;
       validateForm.validateAllFormFeilds(this.loginForm);

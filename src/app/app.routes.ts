@@ -7,6 +7,8 @@ import { MoviesListComponent } from './components/movies-list/movies-list.compon
 import { ShowsListComponent } from './components/shows-list/shows-list.component';
 import { FeedbackComponent } from './components/feedback/feedback.component';
 import { MovieTicketComponent } from './components/movie-ticket/movie-ticket.component';
+import { isLoginCheckGuard } from './Guards/is-login-check.guard';
+import { SeatsArrangmentComponent } from './components/seats-arrangment/seats-arrangment.component';
  
 
 export const routes: Routes = [
@@ -31,8 +33,13 @@ export const routes: Routes = [
         component:ShowsListComponent
     },
     {
+        path:'seat',
+        component:SeatsArrangmentComponent
+    },
+    {
         path:'ticket',
-        component:MovieTicketComponent
+        component:MovieTicketComponent,
+        canActivate:[isLoginCheckGuard]
     },
     {
         path:'feedback',

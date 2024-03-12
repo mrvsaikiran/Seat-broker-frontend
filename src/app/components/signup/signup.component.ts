@@ -7,12 +7,12 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import { signupDataValidater } from '../../helpers/SignupDataValidater';
 import { Observable } from 'rxjs';
 import { validateForm } from '../../helpers/validateForm';
 import { signupModel } from '../../Models/signup';
-import { AuthService } from '../../Services/auth-service.service';
+import { AuthService } from '../../Services/auth.service';
 
 @Component({
   selector: 'app-signup',
@@ -34,7 +34,8 @@ export class SignupComponent {
   constructor(
     private formbuilder: FormBuilder,
     private customValidator: signupDataValidater,
-    private auth:AuthService
+    private auth:AuthService,
+    private router:Router
   ) {
 
   
@@ -131,9 +132,12 @@ export class SignupComponent {
       this.auth.SignUp(SignUpData)
       .subscribe({
         next:(res)=>{
-          alert(res?.message)
+          alert(res?.message);
+          this.SignUpForm.reset();
+          this.router.navigate(['home']);
+
         },error:(err)=>{
-          alert(err?.error.message)
+          alert(err?.error.message);
         }
       })
     } else {
