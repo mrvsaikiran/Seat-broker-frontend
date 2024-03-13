@@ -11,5 +11,6 @@ export const isLoginCheckGuard: CanActivateFn = (route, state) => {
   else{
     inject(Router).navigate(['/login'])
   }
+  return false;
 
 };

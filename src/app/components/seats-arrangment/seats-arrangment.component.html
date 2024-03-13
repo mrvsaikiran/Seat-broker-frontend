@@ -1,1 +1,7 @@
-<p>seats-arrangment works!</p>
+<div class="theatre">
+  <div class="cinema-seats left">
+    <div class="cinema-row row-1" *ngFor="let col of columnArray">
+      <div class="seat" [ngClass]="{'booked':isAvailabe(row,col)}" [ngStyle]="{'background-color':isAvailabe(row,col)?'white':'red'}" (click)="SelectSeat(row,col)" *ngFor="let row of rowArray"></div>
+    </div>
+  </div>
+</div>

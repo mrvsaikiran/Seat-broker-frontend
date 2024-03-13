@@ -9,6 +9,7 @@ import { FeedbackComponent } from './components/feedback/feedback.component';
 import { MovieTicketComponent } from './components/movie-ticket/movie-ticket.component';
 import { isLoginCheckGuard } from './Guards/is-login-check.guard';
 import { SeatsArrangmentComponent } from './components/seats-arrangment/seats-arrangment.component';
+import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
  
 
 export const routes: Routes = [
@@ -19,6 +20,10 @@ export const routes: Routes = [
     {
         path:'signup',
         component:SignupComponent
+    },
+    {
+        path:'forgot',
+        component:ForgotPasswordComponent
     },
     {
         path:'home',
