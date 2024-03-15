@@ -3,9 +3,7 @@
     transition: transform 0.3s;
    }
    
-   .card:hover {
-    transform: scale(1.05);
-   }
+  
    
    .card-title {
     font-size: 1.25rem;
@@ -16,18 +14,93 @@
     font-size: 1rem;
    }
    
-   .btn {
+
+.btn {
+    width: 130px;
+    height: 40px;
+    font-size: 1.1em;
+    cursor: pointer;
+    background-color: #171717;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    transition: all .4s;
     margin-right: 0.5rem;
     margin-bottom: 0.5rem;
    }
-   .button-container {
-    display: flex;
-    flex-wrap: wrap; /* Allows buttons to wrap to the next line if needed */
-    gap: 0.5rem; /* Adds some space between buttons */
-   }
    
    .btn:hover {
-    border: 2px solid #0000ff; /* Change the border color on hover */
-    border-radius: 20px; /* Rounds the corners of the border on hover */
+    border-radius: 5px;
+    transform: translateY(-10px);
+    box-shadow: 0 7px 0 -2px #f85959,
+     0 15px 0 -4px #39a2db,
+     0 16px 10px -3px #39a2db;
    }
+   
+   .btn:active {
+    transition: all 0.2s;
+    transform: translateY(-5px);
+    box-shadow: 0 2px 0 -2px #f85959,
+     0 8px 0 -4px #39a2db,
+     0 12px 10px -3px #39a2db;
+   }
+   .btn:hover {
+    border: 2px solid #0000ff; 
+    border-radius:10px; 
+   }
+   /* Responsive styles */
+@media (min-width: 768px) {
+    .p-card {
+      display: flex;
+      flex-direction: column;
+      width: 300px;
+      margin: 10px;
+    }
+  
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  
+    .distance-label {
+      font-size: 0.8rem;
+      color: #ccc;
+    }
+  
+    .theatre-name {
+      font-weight: bold;
+    }
+  
+    .card-content {
+      flex: 1; /* Allow content to fill remaining space */
+    }
+  
+    .card-footer {
+      display: flex;
+      justify-content: flex-end;
+    }
+  }
+  
+  
+  .p-card {
+    margin: 1rem;
+    transition: transform 0.3s;
+  }
+  
+  .p-button {
+    margin: 0 5px;
+  }
+  
+  .show-available {
+    background-color: green;
+    color: white;
+  }
+  
+  .show-unavailable {
+    background-color: #ddd;
+    color: #999;
+    cursor: not-allowed;
+  }
+  
    

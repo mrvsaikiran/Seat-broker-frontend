@@ -5,12 +5,14 @@ import { TagModule } from 'primeng/tag';
 import { ButtonModule } from 'primeng/button';
 import { Movie } from '../../Models/Movie';
 import { RatingModule } from 'primeng/rating';
-import { FormsModule } from '@angular/forms'
+import { FormsModule } from '@angular/forms';
+import { SortMovieByRatingPipe } from '../../pipes/sort-movie-by-rating.pipe';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-movies-list',
   standalone: true,
-  imports: [CarouselModule,TagModule,ButtonModule,CommonModule,RatingModule,FormsModule],
+  imports: [CarouselModule,TagModule,ButtonModule,CommonModule,RatingModule,FormsModule,SortMovieByRatingPipe],
   templateUrl: './movies-list.component.html',
   styleUrl: './movies-list.component.css'
 })
@@ -137,4 +139,8 @@ export class MoviesListComponent {
         numScroll: 1
       }
     ];
+    constructor(private router:Router){}
+    BookTicketsForMovie(){
+        this.router.navigate(['movie'])
+    }
 }

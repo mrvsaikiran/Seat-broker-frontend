@@ -1,12 +1,15 @@
 import { Component } from '@angular/core';
 import { CalendarNavbarComponent } from '../calendar-navbar/calendar-navbar.component';
 import { PaginatorModule, PaginatorState } from 'primeng/paginator';
-import { CommonModule } from '@angular/common';
+import { NgFor } from '@angular/common';
+import { DatePipe } from '@angular/common';
+import { KnobModule } from 'primeng/knob';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-shows-list',
   standalone: true,
-  imports: [CalendarNavbarComponent,PaginatorModule,CommonModule],
+  imports: [NgFor,CalendarNavbarComponent,PaginatorModule,DatePipe,KnobModule],
   templateUrl: './shows-list.component.html',
   styleUrl: './shows-list.component.css'
 })
@@ -23,11 +26,13 @@ export class ShowsListComponent {
   ];
   theatreName:string='sai ram';
   rating:number=4
+  ratingPercentageBy100:number=this.rating*20;
   currentPage: number = 1; 
   cardsPerPage: number = 10; 
   totalCards: number = 100;
   pageCount: number = Math.ceil(this.totalCards/ this.cardsPerPage); 
 
+  constructor(private router:Router){}
 
   generateCardData(): number[] {
     const startCardNumber = (this.currentPage - 1) * this.cardsPerPage + 1;
@@ -53,6 +58,10 @@ export class ShowsListComponent {
     const diffHours = Math.abs(now.getHours() - date.getHours());
     return diffHours > 3;
     
+ }
+
+ bookTickets(){
+    this.router.navigate(['seat'])
  }
 
 }

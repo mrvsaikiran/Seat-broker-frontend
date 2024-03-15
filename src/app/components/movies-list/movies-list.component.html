@@ -1,4 +1,4 @@
-<p-carousel [value]="products" [numVisible]="3" [numScroll]="2" [circular]="false" [responsiveOptions]="responsiveOptions">
+<p-carousel [value]="products | sortMovieByRating " [numVisible]="3" [numScroll]="2" [circular]="false" [responsiveOptions]="responsiveOptions">
     <ng-template let-product pTemplate="item">
         <div class="border-1 surface-border border-round m-2 text-center py-5 px-3">
             <div class="mb-3">
@@ -11,7 +11,7 @@
                 <div class="mt-5 flex align-items-center justify-content-center gap-2">
                     <h5 class="mt-0 mb-3">{{ 'Duration :'+ product.duration +' mins'}}</h5>
                     <h6 class="mt-0 mb-3">{{ 'Genre :'+ product.genre}}</h6>
-                    <button class="btn"> Book Tickets
+                    <button class="btn" (click)="BookTicketsForMovie()"> Book Tickets
                     </button>
                 </div>
             </div>

@@ -13,7 +13,7 @@ import { NavbarComponent } from '../navbar/navbar.component';
 export class HomeComponent {
   cities: {name:string }[] = [
     { name: 'Mumbai' },
-    { name: 'Delhi-NCR' },
+    { name: 'Delhi' },
     { name: 'Bengaluru' },
     { name: 'Hyderabad' },
     { name: 'Ahmedabad' },
