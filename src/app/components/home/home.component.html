@@ -4,13 +4,13 @@
     <ul>
       <li *ngFor="let city of cities">
         <button id="bottone1"><strong>
-          <a class="text" routerLink="{{ city.name }}" routerLinkActive="active">{{ city.name }}</a>
+          <a class="text" routerLink="{{ city }}" (click) = "onCitySelection(city)" routerLinkActive="active">{{ city.name }}</a>
           </strong>
         </button>
-        
-       
+
+
       </li>
     </ul>
-   
+
   </div>
   <router-outlet></router-outlet>
